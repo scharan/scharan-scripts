@@ -6,8 +6,8 @@ from urlparse import parse_qs
 
 method = "POST"
 #http://code.google.com/apis/accounts/docs/OAuth_ref.html#SigningOAuth
-consumerKey = "saicharan.in"
-consumerSecret = "B8oJiZ6GFbIvYIrq9E/k0RmP"
+consumerKey = "anonymous"
+consumerSecret = "anonymous"
 requestTokenUrl = "https://www.google.com/accounts/OAuthGetRequestToken"
 
 #time() returns float; make it integer and then to string
@@ -71,11 +71,11 @@ if(method=="GET"):
 	requestParamString += "&oauth_signature=" + urllib.quote(signature, safe="~")
 
 #All set, now make the request.
-#For Office environment, use this to go thru proxy
-conn = httplib.HTTPConnection("172.30.247.21:8080")
+#For work environment, use this to go thru proxy
+#conn = httplib.HTTPConnection("172.30.247.21:8080")
 
 #For home/no proxy environments
-#conn = httplib.HTTPConnection("www.google.com:80")
+conn = httplib.HTTPConnection("www.google.com:80")
 
 if(method=="POST"):
 	conn.request(method, "https://www.google.com/accounts/OAuthGetRequestToken", requestParamString, headers)
