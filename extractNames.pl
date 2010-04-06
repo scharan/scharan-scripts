@@ -6,6 +6,7 @@
 use warnings;
 use strict;
 
+#Thanks to Alan Moore: http://stackoverflow.com/questions/2468101/why-does-my-perl-regular-expression-only-find-the-last-occurrence/2470721#2470721
 my $nameRegExp = '(<TABLE>\n+(?:(?!<\/TABLE>|NAME=).*\n+)*)NAME="([^"]+)"';
 
 sub extractNames($$){
