@@ -72,7 +72,7 @@ if(method=="GET"):
 
 #All set, now make the request.
 #For work environment, use this to go thru proxy
-#conn = httplib.HTTPConnection("172.30.247.21:8080")
+#conn = httplib.HTTPConnection("")
 
 #For home/no proxy environments
 conn = httplib.HTTPConnection("www.google.com:80")
